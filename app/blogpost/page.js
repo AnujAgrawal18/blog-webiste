@@ -1,19 +1,18 @@
 "use client"
 import React from 'react'
-import { useSearchParams } from 'next/navigation'
 
-const page = () => {
-    const searchParams = useSearchParams()
-    console.log(searchParams.get('item'))
+
+const page = (context) => {
+    const params = context.searchParams
     return (   
         <div className='flex flex-col justify-center items-center my-10 w-[60rem] mx-auto text-center'>
-            <img src={searchParams.get('img')} alt="" className=' w-full h-[30rem]' />
-            <div className='text-[40px] font-bold'>{searchParams.get('title')}</div>
+            <img src={params.img} alt="" className=' w-full h-[30rem]' />
+            <div className='text-[40px] font-bold'>{params.title}</div>
             <div className='flex text-[25px]'>
-                <div className='mx-5'>{searchParams.get('date')}</div>
-                <div className='mx-5'>{searchParams.get('author')}</div>
+                <div className='mx-5'>{params.date}</div>
+                <div className='mx-5'>{params.author}</div>
             </div>
-            <div className='text-[20px] my-10'>{searchParams.get('body')}</div>
+            <div className='text-[20px] my-10'>{params.body}</div>
             <div className='flex border-y-2 border-black w-full h-[5rem] justify-between align-middle items-center content-center'>
                 <div className='flex'>
                     <p className='text-[20px] font-bold mr-9'>Share This : </p>
