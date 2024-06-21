@@ -21,7 +21,7 @@ const page = () => {
             val.image=url
             const date = parseISO(val.date);
             val.date = format(date, 'd LLLL yyyy')
-            InsertBlog(val)
+            let a = await fetch("http://localhost:5173/",{method:"POST" , headers:{'Content-Type': 'application/json'} , body : JSON.stringify( val)})
             ref.current.reset()
         }
     }
