@@ -1,13 +1,11 @@
 "use client"
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Suspense } from 'react'
 
 const page = () => {
     const searchParams = useSearchParams()
     console.log(searchParams.get('item'))
-    return (
-        <Suspense>
+    return (   
         <div className='flex flex-col justify-center items-center my-10 w-[60rem] mx-auto text-center'>
             <img src={searchParams.get('img')} alt="" className=' w-full h-[30rem]' />
             <div className='text-[40px] font-bold'>{searchParams.get('title')}</div>
@@ -57,7 +55,7 @@ const page = () => {
                     </div>
                 </div>
             </div>
-        </div></Suspense>
+        </div>
     )
 }
 
