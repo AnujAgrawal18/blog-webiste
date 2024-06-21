@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react'
-import GetData from './getdata';
 import { useState, useEffect } from 'react';
 import Link from 'next/link'
 
@@ -10,10 +9,6 @@ const Blogs = () => {
     const [data, setdata] = useState([])
     const [pageno, setpageno] = useState(1)
 
-    // const d = async () => {
-    //     let a = await GetData()
-    //     setdata(a);
-    // }
     const d = async()=>{
         let a = await fetch("http://localhost:5173/")
         let data = await a.json();

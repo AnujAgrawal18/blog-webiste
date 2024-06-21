@@ -3,7 +3,6 @@
 import React from 'react'
 import { useRef , useState} from 'react'
 import { useForm } from "react-hook-form";
-import InsertBlog from '@/components/InsertBlog';
 import { parseISO, format } from 'date-fns';
 
 const page = () => {
