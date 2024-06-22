@@ -5,7 +5,7 @@ import React from 'react'
 const page = (context) => {
     const params = context.searchParams
     return (   
-        <div className='flex flex-col justify-center items-center my-10 w-[60rem] mx-auto text-center'>
+        <div className='flex flex-col justify-center items-center my-10 mx-auto text-center w-[90vw] lg:w-[70vw]'>
             <img src={params.img} alt="" className=' w-full h-[30rem]' />
             <div className='text-[40px] font-bold'>{params.title}</div>
             <div className='flex text-[25px]'>

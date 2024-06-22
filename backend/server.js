@@ -22,8 +22,7 @@ app.get('/', async (req, res) => {
     await client.connect();
     const db = client.db(dbName);
     const collection = db.collection('blogs');
-    const findResult = await collection.find({}).toArray()
-    console.log("hello")
+    const findResult = await collection.find({}, { sort: { date: 1 } }).toArray()
     res.json(findResult)
 })
 
@@ -31,11 +30,19 @@ app.post('/', async (req, res) => {
     await client.connect();
     const db = client.db(dbName);
     const collection = db.collection('blogs');
-    const password = req.body
-    const findResult = await collection.insertOne(password)
-    console.log("hi")
+    const data = req.body
+    const findResult = await collection.insertOne(data)
     res.send({ findResult })
 })
+
+app.get('/types', async (req, res) => {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection('blogs');
+    const findResult = await collection.find({}, { sort: { date: 1 } }).toArray()
+    res.json(findResult)
+})
+
 
 app.delete('/', async (req, res) => {
     await client.connect();

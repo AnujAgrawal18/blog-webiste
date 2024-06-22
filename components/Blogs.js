@@ -31,7 +31,7 @@ const Blogs = () => {
                             <Link href={{ pathname: '/blogpost',query: {title : item.title , author : item.author , body : item.body , img : item.image , comment : item.comments , date : item.date}}}>
                                 <div className='flex h-[20rem]  ml-5 w-[95vw] lg:w-[65vw]  my-10 relative  shadow-[0_0_20px_2px] shadow-green-900' >
                                     <div className='bg-gray-300 px-4 rounded-xl absolute top-7 left-7'>{item.type}</div>
-                                    <img src={item.image} className="w-[15rem] m-4" alt="" />
+                                    <img src={item.image} className="w-[15rem] m-4" alt="Image here" />
                                     <div className='flex flex-col m-4 justify-between'>
                                         <div className='text-[25px] font-bold'>{item.title} <br /><p className='text-[20px]'>BY {item.author}</p></div>
                                         <div className='flex text-[15px] justify-between items-center px-10'>
