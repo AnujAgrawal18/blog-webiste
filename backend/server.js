@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express()
 const port = 5173
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://http://192.168.29.221:27017';
 const client = new MongoClient(url);
 const dbName = 'myBlogsManager';
 
@@ -54,5 +54,5 @@ app.delete('/', async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port http://localhost:${port}`)
+    console.log(`Example app listening on port http://192.168.29.221:${port}`)
 })
