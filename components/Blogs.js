@@ -10,7 +10,7 @@ const Blogs = () => {
     const [pageno, setpageno] = useState(1)
 
     const d = async()=>{
-        let a = await fetch("http://localhost:5173/")
+        let a = await fetch("/api")
         let data = await a.json();
         if (data) {setdata(data)}
       }

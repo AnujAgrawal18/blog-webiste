@@ -20,7 +20,7 @@ const page = () => {
             val.image=url
             const date = parseISO(val.date);
             val.date = format(date, 'd LLLL yyyy')
-            let a = await fetch("http://192.168.29.221:5173/",{method:"POST" , headers:{'Content-Type': 'application/json'} , body : JSON.stringify( val)})
+            await fetch("/api",{method:"POST" , body : JSON.stringify(val),headers: {'content-type': 'application/json'}})
             ref.current.reset()
         }
     }
