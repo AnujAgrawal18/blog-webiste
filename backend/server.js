@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express()
 const port = 5173
 
-const url = 'mongodb://http://192.168.29.221:27017';
+const url = 'mongodb://127.0.0.1:27017';
 const client = new MongoClient(url);
 const dbName = 'myBlogsManager';
 
