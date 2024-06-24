@@ -12,7 +12,7 @@ const Highlight = () => {
     const ref = useRef()
 
     const d = async () => {
-        let a = await fetch("http://192.168.29.221:5173/")
+        let a = await fetch("http://localhost:5173/")
         let data = await a.json();
         if (data) { setdata(data) }
         await types(data)
