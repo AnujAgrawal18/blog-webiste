@@ -10,13 +10,19 @@ const Blogs = () => {
     const [pageno, setpageno] = useState(1)
 
     const d = async()=>{
-        let a = await fetch("/api")
-        let data = await a.json();
-        if (data) {setdata(data)}
+        // let a = await fetch("/api")
+        // let data = await a.json();
+        let blogs = localStorage.getItem("blogs")
+        if (blogs) {
+            setdata(JSON.parse(blogs))
+            // setdata(data)
+        }
       }
     
 
     useEffect(() => {
+        let blogs = localStorage.getItem("blogs")
+        if (!blogs) localStorage.setItem("blogs", JSON.stringify([{"title":"Discover your Inner Genius to better 1","author":"ANUJ AGRAWAL","type":"Nature","date":"26 March 2024","comments":65,"views":"95k","body":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde?","image":"https://cdna.artstation.com/p/assets/images/images/039/740/004/large/artoast8p-quickhappylittlepaintingdownloadresize.jpg?1626796848"},{"title":"Discover your Inner Genius to better 2","author":"ANUJ AGRAWAL","type":"Nature","date":"26 March 2024","comments":65,"views":"95k","body":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde?","image":"https://cdna.artstation.com/p/assets/images/images/039/740/004/large/artoast8p-quickhappylittlepaintingdownloadresize.jpg?1626796848"},{"title":"Discover your Inner Genius to better 3","author":"ANUJ AGRAWAL","type":"Nature","date":"26 March 2024","comments":65,"views":"95k","body":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde?","image":"https://cdna.artstation.com/p/assets/images/images/039/740/004/large/artoast8p-quickhappylittlepaintingdownloadresize.jpg?1626796848"},{"title":"Discover your Inner Genius to better 4","author":"ANUJ AGRAWAL","type":"Nature","date":"26 March 2024","comments":65,"views":"95k","body":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde?","image":"https://cdna.artstation.com/p/assets/images/images/039/740/004/large/artoast8p-quickhappylittlepaintingdownloadresize.jpg?1626796848"},{"title":"Discover your Inner Genius to better 5","author":"ANUJ AGRAWAL","type":"Nature","date":"26 March 2024","comments":65,"views":"95k","body":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis voluptatibus tempora vel dicta cupiditate sunt illo, in a nam, totam delectus, error reprehenderit aliquam unde?","image":"https://cdna.artstation.com/p/assets/images/images/039/740/004/large/artoast8p-quickhappylittlepaintingdownloadresize.jpg?1626796848"}]))
         d()
     }, [])
 

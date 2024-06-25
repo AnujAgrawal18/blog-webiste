@@ -12,15 +12,19 @@ const Highlight = () => {
     const ref = useRef()
 
     const d = async () => {
-        let a = await fetch("/api")
-        let data = await a.json();
-        if (data) { setdata(data) }
-        await types(data)
+        // let a = await fetch("/api")
+        // let data = await a.json();
+        // if (data) { setdata(data) }
+        let blogs = localStorage.getItem("blogs")
+        if (blogs) {
+            setdata(JSON.parse(blogs))
+        }
+        await types(JSON.parse(blogs))
     }
     const types = async (data) => {
         let type = new Map([])
         type.set("All", data.length)
-        data.forEach(element => {
+        data.map(element => {
             if (type.has(element.type)) type.set(element.type, type.get(element.type) + 1)
             else type.set(element.type, 1)
         })
@@ -33,7 +37,7 @@ const Highlight = () => {
     }
     const onSubmit = async (val) => {
         let item=null
-        data.forEach(async(element )=>{
+        data.map(async(element )=>{
             if(element.title===val.search){
                 item=element
                 setTimeout(() => {
